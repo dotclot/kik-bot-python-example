@@ -161,10 +161,10 @@ class KikBot(Flask):
 
 if __name__ == "__main__":
     """ Main program """
-    kik = KikApi('BOT_USERNAME_HERE', 'BOT_API_KEY_HERE')
+    kik = KikApi('sepbot', '34623d04-0100-4bef-96f1-5fc97ffeac17')
     # For simplicity, we're going to set_configuration on startup. However, this really only needs to happen once
     # or if the configuration changes. In a production setting, you would only issue this call if you need to change
     # the configuration, and not every time the bot starts.
-    kik.set_configuration(Configuration(webhook='WEBHOOK_HERE'))
+    kik.set_configuration(Configuration(webhook='https://kikbot01.herokuapp.com/'))
     app = KikBot(kik, __name__)
     app.run(port=8080, host='127.0.0.1', debug=True)
